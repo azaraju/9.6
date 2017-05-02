@@ -1,0 +1,82 @@
+1.Different complex data types in pig:
+
+Atom:
+Any single value in Pig Latin, irrespective of their data, type is known as an Atom. It is stored as string and can be used as string and number. int, long, float, double, chararray, and bytearray are the atomic values of Pig. A piece of data or a simple atomic value is known as a field.
+Example − ‘raja’ or ‘30’
+Tuple:
+A record that is formed by an ordered set of fields is known as a tuple, the fields can be of any type. A tuple is similar to a row in a table of RDBMS.
+Example − (Raja, 30)
+Bag:
+A bag is an unordered set of tuples. In other words, a collection of tuples (non-unique) is known as a bag. Each tuple can have any number of fields (flexible schema). A bag is represented by ‘{}’. It is similar to a table in RDBMS, but unlike a table in RDBMS, it is not necessary that every tuple contain the same number of fields or that the fields in the same position (column) have the same type.
+Example − {(Raja, 30), (Mohammad, 45)}
+A bag can be a field in a relation; in that context, it is known as inner bag.
+Example − {Raja, 30, {9848022338, raja@gmail.com,}}
+Map:
+A map (or data map) is a set of key-value pairs. The key needs to be of type chararray and should be unique. The value might be of any type. It is represented by ‘[]’
+Example − [name#Raja, age#30]
+Relation:
+A relation is a bag of tuples. The relations in Pig Latin are unordered (there is no guarantee that tuples are processed in any particular order).
+
+2.Interact with the shell in Apache pig:
+
+Invoking the Grunt Shell
+You can invoke the Grunt shell in a desired mode (local/MapReduce) using the −x option as shown below.
+Command −
+$ ./pig –x local
+$ ./pig -x mapreduce
+After invoking the Grunt shell, you can run your Pig scripts in the shell. In addition to that, there are certain useful shell and utility commands provided by the Grunt shell. This chapter explains the shell and utility commands provided by the Grunt shell.
+
+3.Pig differs from Map reduce:
+
+Pig:
+Apache Pig is a data flow language.
+It is a high level language.
+Performing a Join operation in Apache Pig is pretty simple.
+Any novice programmer with a basic knowledge of SQL can work conveniently with Apache Pig.
+Apache Pig uses multi-query approach, thereby reducing the length of the codes to a great extent.
+There is no need for compilation. On execution, every Apache Pig operator is converted internally into a MapReduce job.
+
+Map reduce:
+MapReduce is a data processing paradigm.
+MapReduce is low level and rigid.
+It is quite difficult in MapReduce to perform a Join operation between datasets.
+Exposure to Java is must to work with MapReduce.
+MapReduce will require almost 20 times more the number of lines to perform the same task.
+MapReduce jobs have a long compilation process.
+
+pig differs from sql:
+
+pig:
+Pig Latin is a procedural language.
+In Apache Pig, schema is optional. We can store data without designing a schema (values are stored as $01, $02 etc.)
+The data model in Apache Pig is nested relational.
+Apache Pig provides limited opportunity for Query optimization.
+
+sql:
+SQL is a declarative language.
+Schema is mandatory in SQL.
+The data model used in SQL is flat relational.
+There is more opportunity for query optimization in SQL.
+
+4.scalar data types in pig:
+
+int:	Represents a signed 32-bit integer.
+Example : 8
+long:	Represents a signed 64-bit integer.
+Example : 5L
+float:	Represents a signed 32-bit floating point.
+Example : 5.5F
+double:	Represents a 64-bit floating point.
+Example : 10.5
+chararray:	Represents a character array (string) in Unicode UTF-8 format.
+Example : ‘tutorials point’
+Bytearray:	Represents a Byte array (blob).
+Boolean:	Represents a Boolean value.
+Example : true/ false.
+Datetime:	Represents a date-time.
+Example : 1970-01-01T00:00:00.000+00:00
+Biginteger:	Represents a Java BigInteger.
+Example : 60708090709
+Bigdecimal:	Represents a Java BigDecimal
+Example : 185.98376256272893883
+
